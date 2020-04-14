@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import MessageTimeline from "./MessageTimeline";
 import currentUser from "../store/reducers/currentUser";
 
-const Homepage = () => {
+const Homepage = ({ currentUser }) => {
+    if(!currentUser.isAuthenticated) {
   return (
     <div className="home-hero">
       <h1>What's Happening?</h1>
@@ -14,12 +15,14 @@ const Homepage = () => {
     </div>
   );
 }
+
 return (
     <div>
         <MessageTimeline 
         profileImageUrl={currentUser.user.profileImageUrl} 
         username={currentUser.user.username}/>
     </div>
-)
+    );
+};
 
 export default Homepage;

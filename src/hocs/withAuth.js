@@ -1,5 +1,5 @@
 import React, { Component} from "react";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
 export default function withAuth(ComponentToBeRendered){
     class Authenticate extends Component {
